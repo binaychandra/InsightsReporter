@@ -1,0 +1,178 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:v="urn:schemas-microsoft-com:vml">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <style>
+        .background-div {
+            background-image: url('/static/images/digital-banner-art.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-color: #f5f5f5; 
+            height: 75px;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+        <table style="border-collapse: collapse; border: none;">
+            <tr>
+                <td colspan="3">
+                    <div class="background-div" style="color:rgb(255, 255, 255);font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.5; display: flex; align-items: center;">
+                        <p style="font-size: 18px; line-height: 1.2; word-break: break-word; margin-bottom: 15px; margin-left: 150px; margin-right: 60px;text-align: left;">
+                            <span style="font-size: 36px;">
+                                Weekly Analysis Report
+                            </span>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            
+            <tr style="background-color:lightgray;">
+                <td colspan="3" text-align="center">
+                    <div style="color:rgb(42, 68, 68);font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.5; ">
+                    <p style="margin: 0; font-size: 18px; line-height: 1.2; word-break: break-word; margin-bottom: 15px; margin-left: 150px; margin-right: 150px;text-align: center;padding-top: 20px;">
+                        <span style="font-size: 18px;">
+                            The report presents the analysis for Marriott Campaigns in US and provides the bird's-eye view and performance related insights with respect to different States, Divisions etc. 
+                            For more details and forecasted results, please refer 
+                            <a href="#">Performance Dashboard!</a>  
+                        </span>
+                    </p>
+                    </div>
+                </td>
+            </tr>
+            
+            <!--Section for overall Campaign stats and anomalies -->
+            <tr style="background-color: cornsilk;">                
+                <td style="padding-right: 50px; padding-top: 50px;">
+                    <div style="color:darkslategray;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.2;padding-top:50px;padding-bottom:50px;padding-left:50px;margin-left: 100px;">
+                    <h3>Overall Campaign Stats</h3>
+                    <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 5px; margin-bottom: 5px;">
+                        <span style="font-size: 16px;">The figure on right shows the Campaign trend on daily basis. Please refer some stats based on graph,</span>
+                    </p>                    
+                    <ul>
+                        {% for result in results_actualbookingstats %}
+                            <li>{{ result }}</li>
+                        {% endfor %}
+                    </ul>
+                    
+                    </div>
+                </td>
+                <td colspan="2">
+                   <img  alt="Image Of Activity" style="float:right; display:block;"                        
+                    src="/static/images/dailybooking_lineplot.png" background-color="lightgrey"                  
+                   title="Image Of Activity"  width=100% />
+                </td>
+            </tr>
+
+            <!--Section for Campaign comparison between this week vs the last week analysis-->
+            <tr style="background-color:rgb(202, 240, 243);">
+                <td style="width:50%;">
+                    <div style="color:darkslategray;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.2;padding-top:50px;padding-bottom:50px;padding-left:50px;margin-left: 100px;">
+                        <h3>Campaigns Compared to Last Week</h3>
+                        <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 5px; margin-bottom: 5px;">
+                            <span style="font-size: 16px;">The figure on right shows the Campaigns for each state with respect to previous week. The number on each state shows the percentage increase or decrease in Campaigns compared to last week. Please refer more observation below,</span>
+                        </p>
+                        <ul>
+                            {% for result in thisweekvslastweekobs %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="2" style="width:50%;margin-left:75px; margin-top: 50px;margin-bottom: 50px;">
+                    <img  alt="Image Of Activity" display='block' style="float:center; padding-left: 75px;"                        
+                         src="/static/images/usmap_percentchangefrmlastweek.png" background-color="lightgrey"                        
+                        title="Image Of Activity"  width=72% height=auto/>
+                </td>
+            
+            </tr>
+
+            <!--Section for Campaign comparison between this week vs the same week in 2019 analysis-->
+            <tr style="background-color:rgb(245, 226, 226)">
+                <td colspan="2" style="width:50%;margin-left:150px; margin-top: 50px;margin-bottom: 50px;">
+                    <img  alt="Image Of Activity" display="block"  style="float:center; padding-left: 200px;"                  
+                        class="center autowidth" src="/static/images/usmap_percentchangefrmyear2019.png" background-color="lightgrey"                        
+                        title="Image Of Activity" width=72% height=auto />
+                </td>
+                <td style="width:50%;">
+                    <div style="color:darkslategray;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.2;padding-top:50px;padding-bottom:50px;padding-left:50px;margin-right: 100px;margin-left: 50px;">
+                        <h3>Campaigns Compared to 2019</h3>
+                        <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 5px; margin-bottom: 5px;">
+                            <span style="font-size: 16px;">The figure on left shows the Campaigns for each state with respect to 2019. The number on each state shows the increase or decrease in Campaigns compared to 2019. Please refer more observation below,</span>
+                        </p> 
+                        <ul>
+                            {% for result in thisweekvsyear2019obs %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
+            <!--Section for State wise percentage share analysis-->
+            <tr style="background-color:rgb(206, 245, 208);">
+                <td style="width:50%;">
+                    <div style="color:darkslategray;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.2;padding-top:5px;padding-bottom:10px;padding-left:50px;margin-left: 100px;">
+                        <h3>Campaigns for Each States YTD</h3>
+                        <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 5px; margin-bottom: 5px;">
+                            <span style="font-size: 16px;">The pie chart on right shows the Campaigns percentage for each state for 2021 YTD. Please refer more observation below,</span>
+                        </p>
+                        <ul>
+                            {% for result in statewiseanalysis_ytdstr %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </td>
+                <td colspan="2" style="width:50%;">
+                    <img  alt="Image Of Activity" display='block' style="float:left"                        
+                         src="/static/images/pie_statesytd.png" background-color="lightgrey"                        
+                        title="Image Of Activity"  width=90% height=auto/>
+                </td>
+            
+            </tr>
+            
+            <!--Section for Division based analysis-->
+            <tr style="background-color:rgb(233, 232, 231);">
+                <td colspan="2" style="width:50%;padding-left:100px">
+                    <img  alt="Image Of Activity" display='block'                        
+                    src="/static/images/dailybookingdivision_barplot.png" background-color="lightgrey"                        
+                   title="Image Of Activity"  width=100% />
+                </td>
+                <td style="width:50%;">
+                    <div style="color:rgb(52, 83, 83);font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.2;padding-top:5px;padding-bottom:10px;margin-left:50px;margin-right: 100px;">
+                        <h3>Campaigns : Division Based Analysis</h3>
+                        <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 5px; margin-bottom: 5px;">
+                            <span style="font-size: 16px;">The figure shows per day Campaign for each year for all divisions in USA. Here are few observations from this..</span>
+                        </p>
+                        <ul>
+                            {% for result in divisionwiseanalysis_ytdstr %}
+                                <li>{{ result }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </td>
+                
+            </tr>
+            
+            <tr style="background-color:rgb(245, 137, 137);">
+                <td colspan="3" text-align="center">
+                    <div style="color:rgb(42, 68, 68);font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;line-height:1.5;">
+                    <p style="margin: 0; font-size: 16px; line-height: 1.2; word-break: break-word; margin-top: 15px; margin-bottom: 15px; margin-left: 60px; margin-right: 60px;text-align: center;">
+                        <span style="font-size: 13px;">
+                            Thank you for your time. Please revert in case of any suggestions or query.
+                        </span>
+                    </p>
+                    </div>
+                </td>
+            </tr>
+        </div>  
+</body>
+</html>

@@ -1,5 +1,5 @@
 plotly==5.17.0
-kaleido==0.2.1.post1
+kaleido
 Flask==2.2.2
 pandas==2.0.3
 numpy==1.25.2

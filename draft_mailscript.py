@@ -1,5 +1,3 @@
-#import time
-#import logging
 from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
@@ -12,11 +10,10 @@ import plotly.graph_objects as go
 from plotly.graph_objs import *
 from glob import glob
 import os
-#from pathlib import Path
 from PIL import Image
 from itertools import product
 import random
-import pdfkit
+#import pdfkit
 
 us_state_abbrev = {
         'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut',
@@ -459,16 +456,16 @@ if __name__ == '__main__':
 
     # Below code generates the PDF from HTML
     # Options for PDF generation (optional)
-    options = {
-        'page-size': 'A4',
-        'margin-top': '0mm',
-        'margin-right': '0mm',
-        'margin-bottom': '0mm',
-        'margin-left': '0mm'
-    }
-    # Convert HTML to PDF
-    path_wkhtml2pdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
-    config = pdfkit.configuration(wkhtmltopdf=path_wkhtml2pdf)
-    pdfkit.from_string(htmlcontent, "Weekly_Analysis.pdf", options=options, configuration=config)
+    # options = {
+    #     'page-size': 'A4',
+    #     'margin-top': '0mm',
+    #     'margin-right': '0mm',
+    #     'margin-bottom': '0mm',
+    #     'margin-left': '0mm'
+    # }
+    # # Convert HTML to PDF
+    # path_wkhtml2pdf = r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
+    # config = pdfkit.configuration(wkhtmltopdf=path_wkhtml2pdf)
+    # pdfkit.from_string(htmlcontent, "Weekly_Analysis.pdf", options=options, configuration=config)
     # Send the email with updated Html content
     sendmail_html(htmlcontent)

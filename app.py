@@ -21,6 +21,8 @@ def index():
                            statewiseanalysis_ytdstr=statewiseanalysis_ytdstr,
                            divisionwiseanalysis_ytdstr=divisionwiseanalysis_ytdstr)
 
-#if __name__ == '__main__':
-#    app.run(host="0.0.0.0", port=8090)
+if __name__ == '__main__':
+    from waitress import serve
+    serve(app, port=8080, host="0.0.0.0")
+    #app.run(host="0.0.0.0", port=8090)
 #    #app.run(debug=True)
